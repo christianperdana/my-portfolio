@@ -3,7 +3,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -33,6 +36,7 @@
         }
     },
     "scripts": {
+        "vercel-build": "echo 'building for vercel...' && composer install --optimize-autoloader --no-dev && php artisan config:cache && php artisan route:cache && php artisan view:cache",
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
